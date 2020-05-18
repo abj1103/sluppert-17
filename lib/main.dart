@@ -1,7 +1,62 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(SluppertApp());
 
+class SluppertApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Slipper App', style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white,
+        ),
+        body: SlupperCard(),
+      ),
+    );
+  }
+}
+
+class SlupperCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        height: 250.0,
+        width: 200.0,
+        child: Card(
+            child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('images/Donald.jpg'),
+                radius: 75.0,
+              ),
+            ),
+            Container(
+              width: 150,
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: RaisedButton(
+                child: Text(
+                  'Hello Wold',
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.blue,
+                onPressed: () {
+                  print('Hello Wold');
+                },
+              ),
+            ),
+          ],
+        )),
+      ),
+    );
+  }
+}
+
+/*
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -109,3 +164,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/
